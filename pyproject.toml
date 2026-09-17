@@ -1,0 +1,9 @@
+[project]
+name = "market-monitor"
+version = "0.1.0"
+description = "Verified end-of-day market data for A-share ETF 159993"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.31,<3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

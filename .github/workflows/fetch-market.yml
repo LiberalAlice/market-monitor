@@ -1,0 +1,59 @@
+name: Fetch A-share market data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub Actions cron is UTC; these are 15:10, 15:30, 16:00 and 16:20 Asia/Shanghai.
+    - cron: "10,30 7 * * 1-5"
+    - cron: "0,20 8 * * 1-5"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Fetch and validate closing data
+        id: fetch
+        continue-on-error: true
+        run: python -m market_fetch fetch
+      - name: Verify successful output
+        id: verify
+        if: steps.fetch.outcome == 'success'
+        continue-on-error: true
+        run: python -m market_fetch verify
+      - name: Persist public JSON for the next scheduled run
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): update market JSON [skip ci]"
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: Deploy public JSON
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Preserve failing workflow status
+        if: steps.fetch.outcome == 'failure' || steps.verify.outcome == 'failure'
+        run: exit 1
