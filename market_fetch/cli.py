@@ -10,6 +10,7 @@ from .collector import collect
 from .errors import CalendarCoverageError, MarketFetchError
 from .http import build_session
 from .storage import read_json
+from .turnover import collect_turnover
 from .trading_calendar import (
     SHANGHAI_TZ,
     ensure_explicit_target_is_ready,
@@ -106,6 +107,49 @@ def command_smoke_test() -> int:
     return 0
 
 
+def _format_amount(value: object) -> str:
+    if value is None:
+        return "N/A"
+    amount = float(value)
+    return f"{amount:,.0f} CNY ({amount / 1_000_000_000_000:.4f}T)"
+
+
+def _print_turnover(payload: dict[str, object]) -> None:
+    summary = payload.get("summary")
+    summary = summary if isinstance(summary, dict) else {}
+    history = payload.get("history")
+    latest = history[-1] if isinstance(history, list) and history else {}
+    print("A-share turnover")
+    print(f"Market date: {payload.get('market_date') or 'N/A'}")
+    print()
+    print(f"Shanghai: {_format_amount(latest.get('shanghai_amount'))}")
+    print(f"Shenzhen: {_format_amount(latest.get('shenzhen_amount'))}")
+    print(f"Total: {_format_amount(summary.get('current_amount'))}")
+    print()
+    print(f"5d avg: {_format_amount(summary.get('avg_5d'))}")
+    print(f"10d avg: {_format_amount(summary.get('avg_10d'))}")
+    print(f"20d avg: {_format_amount(summary.get('avg_20d'))}")
+    print()
+    pct = summary.get("avg_5d_vs_20d_pct")
+    print(f"5d vs 20d: {pct if pct is not None else 'N/A'}%")
+    print(f"10d < 1.8T: {str(summary.get('avg_10d_below_1_8t')).lower()}")
+    print(f"Current > 2.5T: {str(summary.get('current_above_2_5t')).lower()}")
+    print()
+    print(f"Result: {str(payload.get('status', 'error')).upper()}")
+
+
+def command_turnover(*, smoke_test: bool) -> int:
+    target = resolve_default_target()
+    payload = collect_turnover(
+        target,
+        PROJECT_ROOT,
+        write=not smoke_test,
+        use_cache=not smoke_test,
+    )
+    _print_turnover(payload)
+    return 0 if payload.get("status") == "ok" else 2
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Collect verified A-share closing data")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -113,6 +157,11 @@ def build_parser() -> argparse.ArgumentParser:
     fetch_parser.add_argument("--date", type=_parse_date, help="expected market date (YYYY-MM-DD)")
     subparsers.add_parser("verify", help="verify generated public JSON files")
     subparsers.add_parser("smoke-test", help="make real requests without writing public JSON")
+    subparsers.add_parser("turnover", help="fetch and publish Shanghai+Shenzhen A-share turnover")
+    subparsers.add_parser(
+        "turnover-smoke-test",
+        help="make real official-exchange turnover requests without writing public JSON",
+    )
     return parser
 
 
@@ -125,6 +174,10 @@ def main(argv: list[str] | None = None) -> int:
             return command_verify()
         if args.command == "smoke-test":
             return command_smoke_test()
+        if args.command == "turnover":
+            return command_turnover(smoke_test=False)
+        if args.command == "turnover-smoke-test":
+            return command_turnover(smoke_test=True)
     except (MarketFetchError, OSError, ValueError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1

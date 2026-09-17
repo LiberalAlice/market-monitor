@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-17T20:22:51.639837+08:00",
+  "market_date": "2026-09-17",
+  "status": "ok",
+  "scope": "Shanghai A shares + Shenzhen A shares",
+  "includes_bse": false,
+  "unit": "CNY",
+  "source": [
+    {
+      "name": "Shanghai Stock Exchange daily stock overview",
+      "url": "https://www.sse.com.cn/market/stockdata/overview/day/",
+      "status": "ok",
+      "fields": [
+        "PRODUCT_CODE=01.TRADE_AMT",
+        "PRODUCT_CODE=03.TRADE_AMT"
+      ],
+      "scope": "Main Board A shares + STAR Market; excludes B shares and buybacks",
+      "source_unit": "CNY 100 million"
+    },
+    {
+      "name": "Shenzhen Stock Exchange security category statistics",
+      "url": "https://www.szse.cn/market/overview/",
+      "status": "ok",
+      "fields": [
+        "主板A股.cjje",
+        "创业板A股.cjje"
+      ],
+      "scope": "Main Board A shares + ChiNext A shares; excludes B shares",
+      "source_unit": "CNY 100 million"
+    },
+    {
+      "name": "previously validated a_share_turnover.json",
+      "status": "not_used",
+      "dates": [],
+      "role": "local cache fallback only; never changes the market scope"
+    }
+  ],
+  "coverage": {
+    "expected_trading_days": 30,
+    "available_trading_days": 30,
+    "recent_20_complete": true
+  },
+  "missing_dates": [],
+  "summary": {
+    "current_amount": 1824970000000,
+    "previous_amount": 1840722000000,
+    "avg_5d": 1777040200000,
+    "avg_10d": 1833621300000,
+    "avg_20d": 1891256550000,
+    "avg_5d_vs_20d_pct": -6.04,
+    "avg_10d_below_1_8t": false,
+    "current_above_2_5t": false
+  },
+  "summary_trillion_cny": {
+    "current_amount": 1.825,
+    "previous_amount": 1.8407,
+    "avg_5d": 1.777,
+    "avg_10d": 1.8336,
+    "avg_20d": 1.8913
+  },
+  "history": [
+    {
+      "date": "2026-08-07",
+      "shanghai_amount": 1211012000000,
+      "shenzhen_amount": 1456003000000,
+      "total_amount": 2667015000000
+    },
+    {
+      "date": "2026-08-10",
+      "shanghai_amount": 1168253000000,
+      "shenzhen_amount": 1357527000000,
+      "total_amount": 2525780000000
+    },
+    {
+      "date": "2026-08-11",
+      "shanghai_amount": 1067678000000,
+      "shenzhen_amount": 1255780000000,
+      "total_amount": 2323458000000
+    },
+    {
+      "date": "2026-08-12",
+      "shanghai_amount": 987202000000,
+      "shenzhen_amount": 1167456000000,
+      "total_amount": 2154658000000
+    },
+    {
+      "date": "2026-08-13",
+      "shanghai_amount": 1166001000000,
+      "shenzhen_amount": 1387818000000,
+      "total_amount": 2553819000000
+    },
+    {
+      "date": "2026-08-14",
+      "shanghai_amount": 991681000000,
+      "shenzhen_amount": 1153341000000,
+      "total_amount": 2145022000000
+    },
+    {
+      "date": "2026-08-17",
+      "shanghai_amount": 1114296000000,
+      "shenzhen_amount": 1275858000000,
+      "total_amount": 2390154000000
+    },
+    {
+      "date": "2026-08-18",
+      "shanghai_amount": 1135984000000,
+      "shenzhen_amount": 1266636000000,
+      "total_amount": 2402620000000
+    },
+    {
+      "date": "2026-08-19",
+      "shanghai_amount": 1219048000000,
+      "shenzhen_amount": 1293623000000,
+      "total_amount": 2512671000000
+    },
+    {
+      "date": "2026-08-20",
+      "shanghai_amount": 1019907000000,
+      "shenzhen_amount": 1061685000000,
+      "total_amount": 2081592000000
+    },
+    {
+      "date": "2026-08-21",
+      "shanghai_amount": 884358000000,
+      "shenzhen_amount": 997456000000,
+      "total_amount": 1881814000000
+    },
+    {
+      "date": "2026-08-24",
+      "shanghai_amount": 952618000000,
+      "shenzhen_amount": 1056020000000,
+      "total_amount": 2008638000000
+    },
+    {
+      "date": "2026-08-25",
+      "shanghai_amount": 860923000000,
+      "shenzhen_amount": 974042000000,
+      "total_amount": 1834965000000
+    },
+    {
+      "date": "2026-08-26",
+      "shanghai_amount": 858051000000,
+      "shenzhen_amount": 952274000000,
+      "total_amount": 1810325000000
+    },
+    {
+      "date": "2026-08-27",
+      "shanghai_amount": 1011299000000,
+      "shenzhen_amount": 1116977000000,
+      "total_amount": 2128276000000
+    },
+    {
+      "date": "2026-08-28",
+      "shanghai_amount": 971338000000,
+      "shenzhen_amount": 1132320000000,
+      "total_amount": 2103658000000
+    },
+    {
+      "date": "2026-08-31",
+      "shanghai_amount": 1015110000000,
+      "shenzhen_amount": 1117810000000,
+      "total_amount": 2132920000000
+    },
+    {
+      "date": "2026-09-01",
+      "shanghai_amount": 944952000000,
+      "shenzhen_amount": 1090310000000,
+      "total_amount": 2035262000000
+    },
+    {
+      "date": "2026-09-02",
+      "shanghai_amount": 835916000000,
+      "shenzhen_amount": 956670000000,
+      "total_amount": 1792586000000
+    },
+    {
+      "date": "2026-09-03",
+      "shanghai_amount": 820460000000,
+      "shenzhen_amount": 940014000000,
+      "total_amount": 1760474000000
+    },
+    {
+      "date": "2026-09-04",
+      "shanghai_amount": 939397000000,
+      "shenzhen_amount": 1093957000000,
+      "total_amount": 2033354000000
+    },
+    {
+      "date": "2026-09-07",
+      "shanghai_amount": 899589000000,
+      "shenzhen_amount": 1049628000000,
+      "total_amount": 1949217000000
+    },
+    {
+      "date": "2026-09-08",
+      "shanghai_amount": 916462000000,
+      "shenzhen_amount": 1045624000000,
+      "total_amount": 1962086000000
+    },
+    {
+      "date": "2026-09-09",
+      "shanghai_amount": 874837000000,
+      "shenzhen_amount": 982672000000,
+      "total_amount": 1857509000000
+    },
+    {
+      "date": "2026-09-10",
+      "shanghai_amount": 780327000000,
+      "shenzhen_amount": 868519000000,
+      "total_amount": 1648846000000
+    },
+    {
+      "date": "2026-09-11",
+      "shanghai_amount": 959791000000,
+      "shenzhen_amount": 1014534000000,
+      "total_amount": 1974325000000
+    },
+    {
+      "date": "2026-09-14",
+      "shanghai_amount": 780058000000,
+      "shenzhen_amount": 850938000000,
+      "total_amount": 1630996000000
+    },
+    {
+      "date": "2026-09-15",
+      "shanghai_amount": 764763000000,
+      "shenzhen_amount": 849425000000,
+      "total_amount": 1614188000000
+    },
+    {
+      "date": "2026-09-16",
+      "shanghai_amount": 871878000000,
+      "shenzhen_amount": 968844000000,
+      "total_amount": 1840722000000
+    },
+    {
+      "date": "2026-09-17",
+      "shanghai_amount": 869769000000,
+      "shenzhen_amount": 955201000000,
+      "total_amount": 1824970000000
+    }
+  ],
+  "source_errors": []
+}

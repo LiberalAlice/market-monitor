@@ -1,4 +1,4 @@
-# A 股收盘行情采集器
+# A 股收盘行情与成交额采集器
 
 这是一个面向定时投资检查的轻量级数据采集项目。它在 A 股收盘后抓取深圳 ETF `159993`的未复权日 K，校验目标交易日，并将结果发布成不含任何私人投资信息的 JSON。
 
@@ -12,6 +12,17 @@
 - 成交量单位是“手”，成交额币种是 CNY。
 
 东方财富映射：`f51` 日期、`f52` 开盘、`f53` 收盘、`f54` 最高、`f55` 最低、`f56` 成交量（手）、`f57` 成交额、`f58` 振幅、`f59` 涨跌幅、`f60` 涨跌额、`f61` 换手率。
+
+## 沪深 A 股成交额口径
+
+`public/a_share_turnover.json` 只统计上海和深圳交易所的 A 股股票成交额，明确不含北交所，也不包含 B 股、基金、债券或股票回购。它不使用上证指数或深证成指的成交额代替全市场数据。
+
+- 上海：上交所官方“每日股票情况”，取 `PRODUCT_CODE=01` 主板 A 股和 `PRODUCT_CODE=03` 科创板的 `TRADE_AMT`。
+- 深圳：深交所官方“证券类别统计”，取“主板 A 股”和“创业板 A 股”的 `cjje`。
+- 两个官方页面均将成交金额标为“亿元”，程序统一乘以 1 亿，输出整数人民币元。
+- 解析时还会校验官方的“股票”合计与 A 股分类 + B 股分类一致（允许页面两位小数带来的最多 0.02 亿元误差），以防字段语义变更后静默产生错误数据。
+
+程序保留最近 30 个正式交易日，自行计算 5/10/20 日均值和阈值判断。任一应有交易日缺失时，`status` 为 `incomplete`，`missing_dates` 列出日期；最近 20 日不完整时不会生成有效的 `avg_20d`。之前已通过验证的公开 JSON 可作为同口径本地缓存回退，但不会用不同口径的沪深京数据补齐。
 
 ## 本地运行
 
@@ -42,6 +53,18 @@ python -m market_fetch verify
 python -m market_fetch smoke-test
 ```
 
+抓取并写入沪深 A 股成交额：
+
+```bash
+python -m market_fetch turnover
+```
+
+只对上交所和深交所官方接口进行真实请求，不写文件：
+
+```bash
+python -m market_fetch turnover-smoke-test
+```
+
 运行测试：
 
 ```bash
@@ -53,10 +76,12 @@ pytest -q
 ```bash
 cat public/latest.json
 cat public/history/159993.json
+cat public/a_share_turnover.json
 ```
 
 - `public/latest.json`：目标日收盘价、验证状态、来源状态和生成时间。
 - `public/history/159993.json`：最近 90 个交易日（接口实际可用数量为准）。
+- `public/a_share_turnover.json`：最近 30 个沪深 A 股正式交易日成交额、5/10/20 日均值与阈值判断。
 - `data/raw/`：调试用原始响应，已被 `.gitignore` 排除，不会发布。
 
 如果东方财富短暂失败，腾讯仍可验证当日收盘价。程序只会在已有完整历史的基础上追加该日数据；首次运行时若主源失败，`history_status` 会是 `unavailable`，不会用估算成交额伪造历史。
@@ -77,6 +102,7 @@ cat public/history/159993.json
 ```text
 https://<github-user>.github.io/<repository>/latest.json
 https://<github-user>.github.io/<repository>/history/159993.json
+https://<github-user>.github.io/<repository>/a_share_turnover.json?v=YYYYMMDDHHMM
 ```
 
 如果仓库名恰好是 `<github-user>.github.io`，则 URL 中不需要仓库名路径。
@@ -87,7 +113,7 @@ https://<github-user>.github.io/<repository>/history/159993.json
 curl -fsSL https://<github-user>.github.io/<repository>/latest.json
 ```
 
-检查：
+读取 Pages JSON 时在 URL 后附加 `?v=YYYYMMDDHHMM` 规避缓存，并检查 JSON 内的 `generated_at` 和 `market_date`。对 159993 还应检查：
 
 - `status` 必须是 `ok`。
 - `market_date` 必须是最近已收盘的 A 股交易日。
@@ -95,7 +121,7 @@ curl -fsSL https://<github-user>.github.io/<repository>/latest.json
 
 ## 定时时间
 
-Actions 在工作日的北京时间 15:10、15:30、16:00 和 16:20 运行。GitHub 的 cron 可能延迟，因此程序始终使用市场日期校验，不依赖调度时刻判断成功。
+Actions 在工作日的北京时间 15:10、15:30、16:00 和 16:20 运行。同一次运行会先处理 159993，再抓取沪深 A 股成交额，最后统一发布 `public/`。成交额失败会让工作流明确报警，但发布步骤仍会运行，已正常生成的 `latest.json` 不受影响。GitHub 的 cron 可能延迟，因此程序始终使用市场日期校验，不依赖调度时刻判断成功。
 
 ## 交易日历维护
 

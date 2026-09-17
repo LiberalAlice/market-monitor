@@ -51,6 +51,21 @@ def latest_trading_day(value: date) -> date:
     raise CalendarCoverageError(f"could not resolve a trading day near {value.isoformat()}")
 
 
+def recent_trading_days(end: date, count: int) -> list[date]:
+    """Return ``count`` exchange trading days ending at ``end``, oldest first."""
+    if count < 1:
+        raise ValueError("count must be positive")
+    if not is_trading_day(end):
+        raise CalendarCoverageError(f"{end.isoformat()} is not an A-share trading day")
+    days: list[date] = []
+    candidate = end
+    while len(days) < count:
+        if is_trading_day(candidate):
+            days.append(candidate)
+        candidate -= timedelta(days=1)
+    return list(reversed(days))
+
+
 def resolve_default_target(now: datetime | None = None) -> date:
     local_now = (now or datetime.now(SHANGHAI_TZ)).astimezone(SHANGHAI_TZ)
     today = local_now.date()
