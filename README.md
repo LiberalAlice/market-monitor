@@ -119,9 +119,30 @@ curl -fsSL https://<github-user>.github.io/<repository>/latest.json
 - `market_date` 必须是最近已收盘的 A 股交易日。
 - `verification` 优先应为 `cross_checked`。
 
-## 定时时间
+## 本机定时执行
 
-Actions 在工作日的北京时间 15:10、15:30、16:00 和 16:20 运行。同一次运行会先处理 159993，再抓取沪深 A 股成交额，最后统一发布 `public/`。成交额失败会让工作流明确报警，但发布步骤仍会运行，已正常生成的 `latest.json` 不受影响。GitHub 的 cron 可能延迟，因此程序始终使用市场日期校验，不依赖调度时刻判断成功。
+macOS `launchd` 在周一至周五的 16:30 运行本地采集，17:00 再做一次条件重试；如果当日数据已经完整，第二次会直接退出。脚本依次：
+
+1. 确认 Git 工作区干净并快进同步 `origin/main`。
+2. 抓取 159993 和沪深 A 股成交额。
+3. 只将 `public/` 数据文件提交并通过 SSH 推送 GitHub。
+4. GitHub 的 deploy-only workflow 响应 `public/**` push，将 JSON 发布到 Pages；它不在云端重新抓取行情。
+
+安装或重新加载本机任务：
+
+```bash
+./scripts/install_launchd.sh
+```
+
+查看状态和日志：
+
+```bash
+launchctl print gui/$(id -u)/com.liberalalice.market-monitor
+tail -100 ~/Library/Logs/market-monitor.log
+tail -100 ~/Library/Logs/market-monitor.error.log
+```
+
+本机完全关机时无法执行。GitHub 上的 **Fetch A-share market data** 仍保留 `workflow_dispatch`，可以在需要时手动补跑，但不再使用 GitHub cron 自动抓取。
 
 ## 交易日历维护
 
