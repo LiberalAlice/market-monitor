@@ -8,11 +8,11 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/zsh</string>
-    <string>/Users/macbook/Documents/ChatGPT/证券/market-monitor/scripts/local_scheduled_fetch.sh</string>
+    <string>/Users/macbook/market-monitor-local/scripts/local_scheduled_fetch.sh</string>
   </array>
 
   <key>WorkingDirectory</key>
-  <string>/Users/macbook/Documents/ChatGPT/证券/market-monitor</string>
+  <string>/Users/macbook/market-monitor-local</string>
 
   <key>EnvironmentVariables</key>
   <dict>
@@ -20,6 +20,10 @@
     <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
     <key>PYTHONUNBUFFERED</key>
     <string>1</string>
+    <key>LANG</key>
+    <string>en_US.UTF-8</string>
+    <key>LC_ALL</key>
+    <string>en_US.UTF-8</string>
   </dict>
 
   <key>StartCalendarInterval</key>

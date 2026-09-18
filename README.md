@@ -134,6 +134,8 @@ macOS `launchd` 在周一至周五的 16:30 运行本地采集，17:00 再做一
 ./scripts/install_launchd.sh
 ```
 
+安装器会创建 `~/market-monitor-local` 英文软链接作为 LaunchAgent 入口，避免 macOS 在无交互环境中处理项目路径里的中文字符时出现乱码。
+
 查看状态和日志：
 
 ```bash
