@@ -8,11 +8,11 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/zsh</string>
-    <string>/Users/macbook/market-monitor-local/scripts/local_scheduled_fetch.sh</string>
+    <string>/Users/macbook/market-monitor-runtime/scripts/local_scheduled_fetch.sh</string>
   </array>
 
   <key>WorkingDirectory</key>
-  <string>/Users/macbook/market-monitor-local</string>
+  <string>/Users/macbook/market-monitor-runtime</string>
 
   <key>EnvironmentVariables</key>
   <dict>
