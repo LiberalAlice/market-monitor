@@ -46,5 +46,8 @@
   <string>/Users/macbook/Library/Logs/market-monitor.error.log</string>
   <key>ProcessType</key>
   <string>Background</string>
+
+  <key>RunAtLoad</key>
+  <true/>
 </dict>
 </plist>
