@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T16:30:21.251863+08:00",
-  "market_date": "2026-09-23",
-  "status": "ok",
+  "generated_at": "2026-09-24T16:30:17.221072+08:00",
+  "market_date": null,
+  "status": "incomplete",
   "scope": "Shanghai A shares + Shenzhen A shares",
   "includes_bse": false,
   "unit": "CNY",
@@ -10,7 +10,7 @@
     {
       "name": "Shanghai Stock Exchange daily stock overview",
       "url": "https://www.sse.com.cn/market/stockdata/overview/day/",
-      "status": "ok",
+      "status": "error",
       "fields": [
         "PRODUCT_CODE=01.TRADE_AMT",
         "PRODUCT_CODE=03.TRADE_AMT"
@@ -21,7 +21,7 @@
     {
       "name": "Shenzhen Stock Exchange security category statistics",
       "url": "https://www.szse.cn/market/overview/",
-      "status": "ok",
+      "status": "error",
       "fields": [
         "主板A股.cjje",
         "创业板A股.cjje"
@@ -38,34 +38,30 @@
   ],
   "coverage": {
     "expected_trading_days": 30,
-    "available_trading_days": 30,
-    "recent_20_complete": true
+    "available_trading_days": 29,
+    "recent_20_complete": false
   },
-  "missing_dates": [],
+  "missing_dates": [
+    "2026-09-24"
+  ],
   "summary": {
-    "current_amount": 1766770000000,
-    "previous_amount": 2138754000000,
-    "avg_5d": 1968618000000,
-    "avg_10d": 1855216700000,
-    "avg_20d": 1915375450000,
-    "avg_5d_vs_20d_pct": 2.78,
-    "avg_10d_below_1_8t": false,
-    "current_above_2_5t": false
+    "current_amount": null,
+    "previous_amount": 1766770000000,
+    "avg_5d": null,
+    "avg_10d": null,
+    "avg_20d": null,
+    "avg_5d_vs_20d_pct": null,
+    "avg_10d_below_1_8t": null,
+    "current_above_2_5t": null
   },
   "summary_trillion_cny": {
-    "current_amount": 1.7668,
-    "previous_amount": 2.1388,
-    "avg_5d": 1.9686,
-    "avg_10d": 1.8552,
-    "avg_20d": 1.9154
+    "current_amount": null,
+    "previous_amount": 1.7668,
+    "avg_5d": null,
+    "avg_10d": null,
+    "avg_20d": null
   },
   "history": [
-    {
-      "date": "2026-08-13",
-      "shanghai_amount": 1166001000000,
-      "shenzhen_amount": 1387818000000,
-      "total_amount": 2553819000000
-    },
     {
       "date": "2026-08-14",
       "shanghai_amount": 991681000000,
@@ -241,5 +237,10 @@
       "total_amount": 1766770000000
     }
   ],
-  "source_errors": []
+  "source_errors": [
+    {
+      "date": "2026-09-24",
+      "error": "Shenzhen: SZSE response is missing categories: 主板A股, 主板B股, 创业板A股, 股票"
+    }
+  ]
 }
