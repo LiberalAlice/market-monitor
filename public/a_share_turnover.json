@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-29T16:30:36.563659+08:00",
+  "generated_at": "2026-09-29T17:00:18.762592+08:00",
   "market_date": null,
   "status": "incomplete",
   "scope": "Shanghai A shares + Shenzhen A shares",
@@ -274,7 +274,7 @@
     },
     {
       "date": "2026-08-19",
-      "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-19 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-19"
     },
     {
       "date": "2026-08-20",
