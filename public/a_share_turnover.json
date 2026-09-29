@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-28T16:30:13.851179+08:00",
-  "market_date": "2026-09-28",
-  "status": "ok",
+  "generated_at": "2026-09-29T16:30:36.563659+08:00",
+  "market_date": null,
+  "status": "incomplete",
   "scope": "Shanghai A shares + Shenzhen A shares",
   "includes_bse": false,
   "unit": "CNY",
@@ -10,7 +10,7 @@
     {
       "name": "Shanghai Stock Exchange daily stock overview",
       "url": "https://www.sse.com.cn/market/stockdata/overview/day/",
-      "status": "ok",
+      "status": "cached_fallback",
       "fields": [
         "PRODUCT_CODE=01.TRADE_AMT",
         "PRODUCT_CODE=03.TRADE_AMT"
@@ -21,7 +21,7 @@
     {
       "name": "Shenzhen Stock Exchange security category statistics",
       "url": "https://www.szse.cn/market/overview/",
-      "status": "ok",
+      "status": "cached_fallback",
       "fields": [
         "主板A股.cjje",
         "创业板A股.cjje"
@@ -31,41 +31,67 @@
     },
     {
       "name": "previously validated a_share_turnover.json",
-      "status": "not_used",
-      "dates": [],
+      "status": "used",
+      "dates": [
+        "2026-08-18",
+        "2026-08-19",
+        "2026-08-20",
+        "2026-08-21",
+        "2026-08-24",
+        "2026-08-25",
+        "2026-08-26",
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-31",
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03",
+        "2026-09-04",
+        "2026-09-07",
+        "2026-09-08",
+        "2026-09-09",
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18",
+        "2026-09-21",
+        "2026-09-22",
+        "2026-09-23",
+        "2026-09-24",
+        "2026-09-28"
+      ],
       "role": "local cache fallback only; never changes the market scope"
     }
   ],
   "coverage": {
     "expected_trading_days": 30,
-    "available_trading_days": 30,
-    "recent_20_complete": true
+    "available_trading_days": 29,
+    "recent_20_complete": false
   },
-  "missing_dates": [],
+  "missing_dates": [
+    "2026-09-29"
+  ],
   "summary": {
-    "current_amount": 1704489000000,
-    "previous_amount": 1655171000000,
-    "avg_5d": 1859788400000,
-    "avg_10d": 1828865600000,
-    "avg_20d": 1871761750000,
-    "avg_5d_vs_20d_pct": -0.64,
-    "avg_10d_below_1_8t": false,
-    "current_above_2_5t": false
+    "current_amount": null,
+    "previous_amount": 1704489000000,
+    "avg_5d": null,
+    "avg_10d": null,
+    "avg_20d": null,
+    "avg_5d_vs_20d_pct": null,
+    "avg_10d_below_1_8t": null,
+    "current_above_2_5t": null
   },
   "summary_trillion_cny": {
-    "current_amount": 1.7045,
-    "previous_amount": 1.6552,
-    "avg_5d": 1.8598,
-    "avg_10d": 1.8289,
-    "avg_20d": 1.8718
+    "current_amount": null,
+    "previous_amount": 1.7045,
+    "avg_5d": null,
+    "avg_10d": null,
+    "avg_20d": null
   },
   "history": [
-    {
-      "date": "2026-08-17",
-      "shanghai_amount": 1114296000000,
-      "shenzhen_amount": 1275858000000,
-      "total_amount": 2390154000000
-    },
     {
       "date": "2026-08-18",
       "shanghai_amount": 1135984000000,
@@ -241,5 +267,126 @@
       "total_amount": 1704489000000
     }
   ],
-  "source_errors": []
+  "source_errors": [
+    {
+      "date": "2026-08-18",
+      "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-18 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
+    },
+    {
+      "date": "2026-08-19",
+      "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-19 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
+    },
+    {
+      "date": "2026-08-20",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-20"
+    },
+    {
+      "date": "2026-08-21",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-21"
+    },
+    {
+      "date": "2026-08-24",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-24"
+    },
+    {
+      "date": "2026-08-25",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-25"
+    },
+    {
+      "date": "2026-08-26",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-26"
+    },
+    {
+      "date": "2026-08-27",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-27"
+    },
+    {
+      "date": "2026-08-28",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-28"
+    },
+    {
+      "date": "2026-08-31",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-08-31"
+    },
+    {
+      "date": "2026-09-01",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-01"
+    },
+    {
+      "date": "2026-09-02",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-02"
+    },
+    {
+      "date": "2026-09-03",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-03"
+    },
+    {
+      "date": "2026-09-04",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-04"
+    },
+    {
+      "date": "2026-09-07",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-07"
+    },
+    {
+      "date": "2026-09-08",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-08"
+    },
+    {
+      "date": "2026-09-09",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-09"
+    },
+    {
+      "date": "2026-09-10",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-10"
+    },
+    {
+      "date": "2026-09-11",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-11"
+    },
+    {
+      "date": "2026-09-14",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-14"
+    },
+    {
+      "date": "2026-09-15",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-15"
+    },
+    {
+      "date": "2026-09-16",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-16"
+    },
+    {
+      "date": "2026-09-17",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-17"
+    },
+    {
+      "date": "2026-09-18",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-18"
+    },
+    {
+      "date": "2026-09-21",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-21"
+    },
+    {
+      "date": "2026-09-22",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-22"
+    },
+    {
+      "date": "2026-09-23",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-23"
+    },
+    {
+      "date": "2026-09-24",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-24"
+    },
+    {
+      "date": "2026-09-28",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-28"
+    },
+    {
+      "date": "2026-09-29",
+      "error": "Shanghai: request failed: 403 Client Error: Forbidden for url: https://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-29"
+    }
+  ]
 }

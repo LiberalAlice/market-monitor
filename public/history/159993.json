@@ -3,25 +3,11 @@
   "symbol": "159993",
   "exchange": "SZ",
   "name": "鹏华国证证券龙头交易型开放式指数证券投资基金",
-  "generated_at": "2026-09-28T16:30:11.193546+08:00",
+  "generated_at": "2026-09-29T16:30:26.906168+08:00",
   "source": "eastmoney",
   "volume_unit": "lot",
   "amount_currency": "CNY",
   "items": [
-    {
-      "date": "2026-05-22",
-      "open": 1.146,
-      "close": 1.127,
-      "high": 1.152,
-      "low": 1.123,
-      "previous_close": 1.148,
-      "change": -0.021,
-      "change_pct": -1.83,
-      "volume": 967050,
-      "volume_unit": "lot",
-      "amount": 109325973.5,
-      "amount_currency": "CNY"
-    },
     {
       "date": "2026-05-25",
       "open": 1.129,
@@ -1266,6 +1252,20 @@
       "volume": 573416,
       "volume_unit": "lot",
       "amount": 63780353.2,
+      "amount_currency": "CNY"
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1.104,
+      "close": 1.105,
+      "high": 1.11,
+      "low": 1.103,
+      "previous_close": 1.106,
+      "change": -0.001,
+      "change_pct": -0.09,
+      "volume": 283308,
+      "volume_unit": "lot",
+      "amount": 31343280.8,
       "amount_currency": "CNY"
     }
   ]
