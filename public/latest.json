@@ -3,8 +3,8 @@
   "symbol": "159993",
   "exchange": "SZ",
   "name": "鹏华国证证券龙头交易型开放式指数证券投资基金",
-  "target_date": "2026-10-09",
-  "generated_at": "2026-10-09T16:30:11.488508+08:00",
+  "target_date": "2026-10-12",
+  "generated_at": "2026-10-12T16:30:11.678887+08:00",
   "sources": [
     {
       "name": "eastmoney",
@@ -14,26 +14,26 @@
     {
       "name": "tencent",
       "status": "ok",
-      "market_date": "2026-10-09",
-      "close": 1.112
+      "market_date": "2026-10-12",
+      "close": 1.114
     }
   ],
-  "market_date": "2026-10-09",
+  "market_date": "2026-10-12",
   "status": "ok",
   "verification": "fallback_only",
   "selected_source": "tencent",
   "quote": {
-    "date": "2026-10-09",
-    "open": 1.09,
-    "close": 1.112,
-    "high": 1.115,
-    "low": 1.084,
-    "previous_close": 1.09,
-    "change": 0.022,
-    "change_pct": 2.02,
-    "volume": 488454,
+    "date": "2026-10-12",
+    "open": 1.112,
+    "close": 1.114,
+    "high": 1.117,
+    "low": 1.108,
+    "previous_close": 1.112,
+    "change": 0.002,
+    "change_pct": 0.18,
+    "volume": 328445,
     "volume_unit": "lot",
-    "amount": 53732217,
+    "amount": 36567660,
     "amount_currency": "CNY"
   },
   "history_status": "complete"
