@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-19T16:30:06.754424+08:00",
-  "market_date": "2026-10-19",
+  "generated_at": "2026-10-20T16:30:11.118426+08:00",
+  "market_date": "2026-10-20",
   "status": "ok",
   "scope": "Shanghai A shares + Shenzhen A shares",
   "includes_bse": false,
@@ -43,29 +43,23 @@
   },
   "missing_dates": [],
   "summary": {
-    "current_amount": 1439225000000,
-    "previous_amount": 1560640000000,
-    "avg_5d": 1545647800000,
-    "avg_10d": 1570238500000,
-    "avg_20d": 1699552050000,
-    "avg_5d_vs_20d_pct": -9.06,
+    "current_amount": 1458367000000,
+    "previous_amount": 1439225000000,
+    "avg_5d": 1501755200000,
+    "avg_10d": 1574995000000,
+    "avg_20d": 1690920600000,
+    "avg_5d_vs_20d_pct": -11.19,
     "avg_10d_below_1_8t": true,
     "current_above_2_5t": false
   },
   "summary_trillion_cny": {
-    "current_amount": 1.4392,
-    "previous_amount": 1.5606,
-    "avg_5d": 1.5456,
-    "avg_10d": 1.5702,
-    "avg_20d": 1.6996
+    "current_amount": 1.4584,
+    "previous_amount": 1.4392,
+    "avg_5d": 1.5018,
+    "avg_10d": 1.575,
+    "avg_20d": 1.6909
   },
   "history": [
-    {
-      "date": "2026-08-31",
-      "shanghai_amount": 1015110000000,
-      "shenzhen_amount": 1117810000000,
-      "total_amount": 2132920000000
-    },
     {
       "date": "2026-09-01",
       "shanghai_amount": 944952000000,
@@ -239,6 +233,12 @@
       "shanghai_amount": 688157000000,
       "shenzhen_amount": 751068000000,
       "total_amount": 1439225000000
+    },
+    {
+      "date": "2026-10-20",
+      "shanghai_amount": 701032000000,
+      "shenzhen_amount": 757335000000,
+      "total_amount": 1458367000000
     }
   ],
   "source_errors": []
