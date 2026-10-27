@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-26T17:00:10.871155+08:00",
+  "generated_at": "2026-10-27T16:30:14.564297+08:00",
   "market_date": null,
   "status": "incomplete",
   "scope": "Shanghai A shares + Shenzhen A shares",
@@ -33,7 +33,6 @@
       "name": "previously validated a_share_turnover.json",
       "status": "used",
       "dates": [
-        "2026-09-07",
         "2026-09-08",
         "2026-09-09",
         "2026-09-10",
@@ -68,15 +67,16 @@
   ],
   "coverage": {
     "expected_trading_days": 30,
-    "available_trading_days": 29,
+    "available_trading_days": 28,
     "recent_20_complete": false
   },
   "missing_dates": [
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
   ],
   "summary": {
     "current_amount": null,
-    "previous_amount": 1958609000000,
+    "previous_amount": null,
     "avg_5d": null,
     "avg_10d": null,
     "avg_20d": null,
@@ -86,18 +86,12 @@
   },
   "summary_trillion_cny": {
     "current_amount": null,
-    "previous_amount": 1.9586,
+    "previous_amount": null,
     "avg_5d": null,
     "avg_10d": null,
     "avg_20d": null
   },
   "history": [
-    {
-      "date": "2026-09-07",
-      "shanghai_amount": 899589000000,
-      "shenzhen_amount": 1049628000000,
-      "total_amount": 1949217000000
-    },
     {
       "date": "2026-09-08",
       "shanghai_amount": 916462000000,
@@ -269,10 +263,6 @@
   ],
   "source_errors": [
     {
-      "date": "2026-09-07",
-      "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-07 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
-    },
-    {
       "date": "2026-09-08",
       "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-08 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
     },
@@ -387,6 +377,10 @@
     {
       "date": "2026-10-26",
       "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-10-26 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
+    },
+    {
+      "date": "2026-10-27",
+      "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-10-27 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
     }
   ]
 }
