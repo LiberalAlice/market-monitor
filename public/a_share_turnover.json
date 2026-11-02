@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-02T11:50:54.348619+08:00",
-  "market_date": "2026-10-30",
+  "generated_at": "2026-11-02T16:30:12.216718+08:00",
+  "market_date": "2026-11-02",
   "status": "ok",
   "scope": "Shanghai A shares + Shenzhen A shares",
   "includes_bse": false,
@@ -10,7 +10,7 @@
     {
       "name": "Shanghai Stock Exchange daily stock overview",
       "url": "https://www.sse.com.cn/market/stockdata/overview/day/",
-      "status": "cached_fallback",
+      "status": "ok",
       "fields": [
         "PRODUCT_CODE=01.TRADE_AMT",
         "PRODUCT_CODE=03.TRADE_AMT"
@@ -21,7 +21,7 @@
     {
       "name": "Shenzhen Stock Exchange security category statistics",
       "url": "https://www.szse.cn/market/overview/",
-      "status": "cached_fallback",
+      "status": "ok",
       "fields": [
         "主板A股.cjje",
         "创业板A股.cjje"
@@ -31,13 +31,8 @@
     },
     {
       "name": "previously validated a_share_turnover.json",
-      "status": "used",
-      "dates": [
-        "2026-09-11",
-        "2026-09-14",
-        "2026-09-15",
-        "2026-09-16"
-      ],
+      "status": "not_used",
+      "dates": [],
       "role": "local cache fallback only; never changes the market scope"
     }
   ],
@@ -48,29 +43,23 @@
   },
   "missing_dates": [],
   "summary": {
-    "current_amount": 1676363000000,
-    "previous_amount": 1557693000000,
-    "avg_5d": 1587386000000,
-    "avg_10d": 1575468900000,
-    "avg_20d": 1586116900000,
-    "avg_5d_vs_20d_pct": 0.08,
+    "current_amount": 1784942000000,
+    "previous_amount": 1676363000000,
+    "avg_5d": 1622381200000,
+    "avg_10d": 1610040600000,
+    "avg_20d": 1590139550000,
+    "avg_5d_vs_20d_pct": 2.03,
     "avg_10d_below_1_8t": true,
     "current_above_2_5t": false
   },
   "summary_trillion_cny": {
-    "current_amount": 1.6764,
-    "previous_amount": 1.5577,
-    "avg_5d": 1.5874,
-    "avg_10d": 1.5755,
-    "avg_20d": 1.5861
+    "current_amount": 1.7849,
+    "previous_amount": 1.6764,
+    "avg_5d": 1.6224,
+    "avg_10d": 1.61,
+    "avg_20d": 1.5901
   },
   "history": [
-    {
-      "date": "2026-09-11",
-      "shanghai_amount": 959791000000,
-      "shenzhen_amount": 1014534000000,
-      "total_amount": 1974325000000
-    },
     {
       "date": "2026-09-14",
       "shanghai_amount": 780058000000,
@@ -244,24 +233,13 @@
       "shanghai_amount": 765534000000,
       "shenzhen_amount": 910829000000,
       "total_amount": 1676363000000
+    },
+    {
+      "date": "2026-11-02",
+      "shanghai_amount": 848175000000,
+      "shenzhen_amount": 936767000000,
+      "total_amount": 1784942000000
     }
   ],
-  "source_errors": [
-    {
-      "date": "2026-09-11",
-      "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-11 (Caused by ProtocolError('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))); Shenzhen: request failed: HTTPSConnectionPool(host='www.szse.cn', port=443): Max retries exceeded with url: /api/report/ShowReport/data?SHOWTYPE=JSON&CATALOGID=1803_sczm&TABKEY=tab1&txtQueryDate=2026-09-11 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
-    },
-    {
-      "date": "2026-09-14",
-      "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-14 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)'))); Shenzhen: request failed: HTTPSConnectionPool(host='www.szse.cn', port=443): Max retries exceeded with url: /api/report/ShowReport/data?SHOWTYPE=JSON&CATALOGID=1803_sczm&TABKEY=tab1&txtQueryDate=2026-09-14 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
-    },
-    {
-      "date": "2026-09-15",
-      "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-15 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)'))); Shenzhen: request failed: HTTPSConnectionPool(host='www.szse.cn', port=443): Max retries exceeded with url: /api/report/ShowReport/data?SHOWTYPE=JSON&CATALOGID=1803_sczm&TABKEY=tab1&txtQueryDate=2026-09-15 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
-    },
-    {
-      "date": "2026-09-16",
-      "error": "Shanghai: request failed: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-09-16 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)'))); Shenzhen: request failed: HTTPSConnectionPool(host='www.szse.cn', port=443): Max retries exceeded with url: /api/report/ShowReport/data?SHOWTYPE=JSON&CATALOGID=1803_sczm&TABKEY=tab1&txtQueryDate=2026-09-16 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
-    }
-  ]
+  "source_errors": []
 }
