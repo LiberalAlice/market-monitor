@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-02T16:30:12.216718+08:00",
-  "market_date": "2026-11-02",
+  "generated_at": "2026-11-04T16:30:17.391638+08:00",
+  "market_date": "2026-11-04",
   "status": "ok",
   "scope": "Shanghai A shares + Shenzhen A shares",
   "includes_bse": false,
@@ -43,35 +43,23 @@
   },
   "missing_dates": [],
   "summary": {
-    "current_amount": 1784942000000,
-    "previous_amount": 1676363000000,
-    "avg_5d": 1622381200000,
-    "avg_10d": 1610040600000,
-    "avg_20d": 1590139550000,
-    "avg_5d_vs_20d_pct": 2.03,
+    "current_amount": 2039675000000,
+    "previous_amount": 1705162000000,
+    "avg_5d": 1752767000000,
+    "avg_10d": 1695559100000,
+    "avg_20d": 1634882700000,
+    "avg_5d_vs_20d_pct": 7.21,
     "avg_10d_below_1_8t": true,
     "current_above_2_5t": false
   },
   "summary_trillion_cny": {
-    "current_amount": 1.7849,
-    "previous_amount": 1.6764,
-    "avg_5d": 1.6224,
-    "avg_10d": 1.61,
-    "avg_20d": 1.5901
+    "current_amount": 2.0397,
+    "previous_amount": 1.7052,
+    "avg_5d": 1.7528,
+    "avg_10d": 1.6956,
+    "avg_20d": 1.6349
   },
   "history": [
-    {
-      "date": "2026-09-14",
-      "shanghai_amount": 780058000000,
-      "shenzhen_amount": 850938000000,
-      "total_amount": 1630996000000
-    },
-    {
-      "date": "2026-09-15",
-      "shanghai_amount": 764763000000,
-      "shenzhen_amount": 849425000000,
-      "total_amount": 1614188000000
-    },
     {
       "date": "2026-09-16",
       "shanghai_amount": 871878000000,
@@ -239,6 +227,18 @@
       "shanghai_amount": 848175000000,
       "shenzhen_amount": 936767000000,
       "total_amount": 1784942000000
+    },
+    {
+      "date": "2026-11-03",
+      "shanghai_amount": 811799000000,
+      "shenzhen_amount": 893363000000,
+      "total_amount": 1705162000000
+    },
+    {
+      "date": "2026-11-04",
+      "shanghai_amount": 954216000000,
+      "shenzhen_amount": 1085459000000,
+      "total_amount": 2039675000000
     }
   ],
   "source_errors": []
