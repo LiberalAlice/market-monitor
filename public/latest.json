@@ -3,37 +3,38 @@
   "symbol": "159993",
   "exchange": "SZ",
   "name": "鹏华国证证券龙头交易型开放式指数证券投资基金",
-  "target_date": "2026-11-10",
-  "generated_at": "2026-11-10T16:30:11.112435+08:00",
+  "target_date": "2026-11-11",
+  "generated_at": "2026-11-11T16:30:38.537906+08:00",
   "sources": [
     {
       "name": "eastmoney",
-      "status": "error",
-      "error": "eastmoney: request failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?secid=0.159993&klt=101&fqt=0&lmt=90&end=20500101&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61 (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+      "status": "ok",
+      "market_date": "2026-11-11",
+      "close": 1.079
     },
     {
       "name": "tencent",
       "status": "ok",
-      "market_date": "2026-11-10",
-      "close": 1.088
+      "market_date": "2026-11-11",
+      "close": 1.079
     }
   ],
-  "market_date": "2026-11-10",
+  "market_date": "2026-11-11",
   "status": "ok",
-  "verification": "fallback_only",
-  "selected_source": "tencent",
+  "verification": "cross_checked",
+  "selected_source": "eastmoney",
   "quote": {
-    "date": "2026-11-10",
-    "open": 1.094,
-    "close": 1.088,
-    "high": 1.097,
-    "low": 1.084,
-    "previous_close": 1.09,
-    "change": -0.002,
-    "change_pct": -0.18,
-    "volume": 2168812,
+    "date": "2026-11-11",
+    "open": 1.085,
+    "close": 1.079,
+    "high": 1.086,
+    "low": 1.074,
+    "previous_close": 1.088,
+    "change": -0.009,
+    "change_pct": -0.83,
+    "volume": 348907,
     "volume_unit": "lot",
-    "amount": 235772519,
+    "amount": 37624692.9,
     "amount_currency": "CNY"
   },
   "history_status": "complete"
